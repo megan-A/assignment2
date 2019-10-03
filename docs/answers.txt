@@ -66,5 +66,19 @@
 	code every time one person pushes their updates.
 	
 	
+5. OOP Principles
+
+	The Driving simulator prototype is using both polymorphism and 
+	encapulation. It uses polymorphism because the array that is 
+	storing the objects is of the base class Vehicle and can
+	store any of its children. The print roster function then reads
+	through the list and is able to determine which versions of 
+	the functions to run based on what the class of the object 
+	in the index is. Encapsulation is used with protection levels
+	that are used in the classes. Certain data is available 
+	to child classes only through inherited functions. For example,
+	the child classes must use the setBrand() function because they
+	do not have access myBrand since it is private member data of
+	Vehicle.
 	
 		

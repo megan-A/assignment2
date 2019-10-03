@@ -1,0 +1,70 @@
+3.
+
+(a) 
+	Enumerating objects: 9, done.
+	Counting objects: 100% (9/9), done.
+	Delta compression using up to 4 threads
+	Compressing objects: 100% (5/5), done.
+	Writing objects: 100% (7/7), 897 bytes | 448.00 KiB/s, done.
+	Total 7 (delta 2), reused 0 (delta 0)
+	remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+	To https://github.com/megan-A/assignment2.git
+	   f4975e5..a862ecd  master -> master
+
+(b) 9 commits
+	git shortlog
+	
+(c) Sep 25 23:19
+	ls -a -l
+	
+(d) Reasons for Branching in Repositories
+	1)A way to add features and make changes to a program 
+	while being able to keep track of where that feature is 
+	introduced to your code (especially useful if the new
+	feature adds bugs)
+	2)a method to implement different versions of a program
+	
+(e) git log shows you all of the commits that have been made 
+	in reverse chronological order along with who made them, 
+	when they made them, and the commit messages. git 
+	status shows you the comparison of your local repository
+	relative to its origin regarding commits. It also tells you
+	if there are any files that are ready to commit or if there
+	are any new files thet need to be added to the repository.
+	
+(f) git log --follow vehicle.h
+
+(g) git log --grep file
+
+(h) 
+	I. Inheritence is a feature of classes in which a class	
+		can be created as the "child" of another class, meaning
+		they inherit all of the public and protected member 
+		data and functions
+	II. Polymorphism is an essential feature of Inheritance in
+		which a single function call can resolve to any of the
+		objects of the base class. This is done by the compliler
+		determining the class of the object the pointer is 
+		pointing to at run time and running that version of 
+		the function.
+	III. Encapsulation is the method of making member data
+		or functions that the user does not need to have
+		access to private or protected so that it cannot be 
+		changed/used directly by users. Then public functions are 
+		created for the user to be able to access/change the
+		data or use private functions in the appropriate ways 
+		the class creater wishes.
+
+(i) The main difference is that the Dictator and Lieutenant
+	workflow has two levels of integration and resolution of
+	conflicts between developers, rather than the one stage
+	in the Integration Manager workflow.
+	
+(j) For a project so large its easier for the errors to be
+	resolved in batches (especially grouped together by feature)
+	versus each individual potentially having to alter their 
+	code every time one person pushes their updates.
+	
+	
+	
+		

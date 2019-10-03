@@ -17,10 +17,10 @@
 	//Explicit Constructors
 	Boat::Boat(string brand, string model, string fuel, int numMotors)
 	{
-		myBrand = brand;
-		myModel = model;
+		setBrand(brand);
+		setModel(model);
+		setFuelType(fuel);
 		numberOfMotors = numMotors;
-		fuelType = fuel;
 	}
 	
 /*Destructor*/
@@ -31,8 +31,8 @@
 
 	string Boat::toString()
 	{
-		return "-> Boat\n" + PowerVehicle::toString + 
-					"\n\t Number of Motors: " + getnumberOfMotors();
+		return "-> Boat\n" + PoweredVehicle::toString() + 
+					"\n\tNumber of Motors: " + to_string(numberOfMotors);
 	}
 	
 /*Mileage*/
@@ -40,7 +40,7 @@
 	double Boat::mileageEstimate(double time)
 	{
 		double mileage = 20;
-		double boost = 0;
+		double boost = 1;
 		
 		for(int i = 0; i < numberOfMotors; i++)
 		{
@@ -49,7 +49,7 @@
 		
 		if(fuelType == "Premium")
 		{
-			mileage += 10
+			mileage += 10;
 		}
 		
 		mileage *= boost;
@@ -59,7 +59,7 @@
 	
 /*Set Number of Motors*/
 
-	void Boat::setnumberOfMotors(string numMotors)
+	void Boat::setnumberOfMotors(int numMotors)
 	{
 		numberOfMotors = numMotors;
 	}

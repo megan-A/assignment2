@@ -4,9 +4,6 @@
 
 #include "Jet.h"
 
-//Seed Random Number Generator
-	srand((unsigned int)time(0));
-
 /*Constructors and Destructor*/
 
 	//Default
@@ -20,9 +17,9 @@
 	//Explicit Constructors
 	Jet::Jet(string brand, string model, string fuel, int numEngines)
 	{
-		myBrand = brand;
-		myModel = model;
-		fuelType = fuel;
+		setBrand(brand);
+		setModel(model);
+		setFuelType(fuel);
 		numberOfEngines = numEngines;
 	}
 	
@@ -34,8 +31,8 @@
 
 	string Jet::toString()
 	{
-		return "-> Jet\n" + PowerVehicle::toString + 
-					"\n\t Number of Engines: " + getnumberOfEngines();
+		return "-> Jet\n" + PoweredVehicle::toString() + 
+					"\n\tNumber of Engines: " + to_string(numberOfEngines);
 	}
 	
 /*Mileage*/
@@ -43,11 +40,12 @@
 	double Jet::mileageEstimate(double time)
 	{
 		double mileage;
-		mileage = rand % 60 + 40; 	//random number generation between 
+		mileage = rand() % 60 + 40; 	//random number generation between 
 									//40 and 100
 		if(numberOfEngines > 2 && fuelType == "Rocket")
 		{
 			double boost = .055 * numberOfEngines;
+			boost++;
 			mileage *= boost;
 		}
 		
@@ -58,7 +56,7 @@
 	
 /*Set Number of Engines*/
 
-	void Jet::setnumberOfEngines(string numEngines)
+	void Jet::setnumberOfEngines(int numEngines)
 	{
 		numberOfEngines = numEngines;
 	}

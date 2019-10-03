@@ -4,15 +4,12 @@
 
 #include "Skateboard.h"
 
-//seed random number generator
-	srand((unsigned int)time(0));
-
 /*Constructor and Destructor*/
 
 	Skateboard::Skateboard(string brand, string model)
 	{
-		myBrand = brand;
-		myModel = model;
+		setBrand(brand);
+		setModel(model);
 	}
 	
     Skateboard::~Skateboard() = default;
@@ -21,23 +18,24 @@
     
     string Skateboard::toString()
 	{
-		return "-> Skateboard\n" + Vehicle::toString;
+		return "-> Skateboard\n" + Vehicle::toString();
 	}
 	
 /*Mileage*/
 
-	virtual double mileageEstimate(double time)
+	double mileageEstimate(double time)
 	{
-		double mileage = rand % .6;
-		
-		if( time > 25 && time < 250)
-		{
-			double range = time/3;
-			double add = rand % range;
-			mileage += add;
-		}
+		double mileage = rand() % 5 + 1;
+		mileage /= 10;
 		
 		mileage *= time;
 		
+		if(time > 25 && time < 250)
+		{
+			int range = (static_cast<int>(time))/3;
+			int add = rand() % range + 1;
+			mileage += add;
+		}
+			
 		return mileage;
 	}

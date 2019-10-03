@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib> // for random number generation
+#include <ctime> // use time to seed generator
 #include "Car.h"
 #include "Bicycle.h"
 #include "Jet.h"
@@ -8,6 +10,9 @@
 void printVehiclesRoster(Vehicle **vehicles, int size);
 
 int main() {
+	
+	srand((unsigned int)time(0)); //seed rand num generator
+	
     std::cout << "Driving simulator" << std::endl;
     int size = 12;
     int capacity = 14;
@@ -45,6 +50,6 @@ void printVehiclesRoster(Vehicle **vehicles, int size) {
         cout << i << " " << vehicles[i]->toString() << endl;
         cout << "\tWould travel: "
              << vehicles[i]->mileageEstimate(simulatedDistance) << " miles in "
-             << simulatedDistance << " seconds" << endl;
+             << simulatedDistance << " minutes" << endl;
     }
 }
